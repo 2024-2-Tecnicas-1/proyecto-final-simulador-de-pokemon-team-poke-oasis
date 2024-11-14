@@ -279,19 +279,18 @@ public class Principal
         {
             System.out.println("\nRegistrar nuevo Pokémon");
 
-            // Solicitar nombre del Pokémon
+         
             System.out.print("Ingresa el nombre del Pokémon: ");
-            String nombre = scanner.nextLine();
-            scanner.nextLine();
-            // Solicitar salud del Pokémon
+            String nombre = scanner.next();
+        
             System.out.print("Ingresa la salud del Pokémon: ");
             int salud = scanner.nextInt();
 
-            // Solicitar puntos de ataque del Pokémon
+          
             System.out.print("Ingresa los puntos de ataque del Pokémon: ");
             int puntosDeAtaque = scanner.nextInt();
 
-            // Elegir el tipo de Pokémon de una lista
+
             System.out.println("Selecciona el tipo del Pokémon:");
             for (int i = 0; i < TipoPokemon.values().length; i++) 
                 {
@@ -305,11 +304,11 @@ public class Principal
                     tipoIndex = scanner.nextInt() - 1;
                 } 
             while (tipoIndex < 0 || tipoIndex >= TipoPokemon.values().length);
-            scanner.nextLine(); // Consumir la línea después del entero
+            scanner.nextLine(); 
 
             TipoPokemon tipo = TipoPokemon.values()[tipoIndex];
 
-            // Crear el nuevo Pokémon
+        
             Pokemon nuevoPokemon = new Pokemon(nombre, salud, puntosDeAtaque, tipo, "Normal");
             pokemones.add(nuevoPokemon);
 
@@ -317,14 +316,14 @@ public class Principal
         }
          
          
-    // Método para iniciar la batalla
+
 private static void iniciarBatalla(Scanner scanner) {
     if (entrenadores.size() < 2) {
         System.out.println("No hay suficientes entrenadores para iniciar una batalla. Registra más entrenadores.");
         return;
     }
 
-    // Variables para almacenar los entrenadores y Pokémon seleccionados
+
     Entrenador entrenador1 = null;
     Entrenador entrenador2 = null;
     Pokemon pokemon1 = null;
@@ -341,7 +340,7 @@ private static void iniciarBatalla(Scanner scanner) {
         System.out.println("6. Volver al menú principal");
         System.out.print("Elige una opción: ");
         int opcion = scanner.nextInt();
-        scanner.nextLine(); // Consumir la nueva línea
+        scanner.nextLine(); 
 
         switch (opcion) {
             case 1:
@@ -383,7 +382,7 @@ private static void iniciarBatalla(Scanner scanner) {
 }
 
 
-    // Método para seleccionar un entrenador
+ 
     private static Entrenador seleccionarrEntrenador(Scanner scanner) {
     if (entrenadores.isEmpty()) {
         System.out.println("No hay entrenadores disponibles.");
@@ -397,7 +396,7 @@ private static void iniciarBatalla(Scanner scanner) {
     System.out.print("Elige un entrenador (número): ");
     
     int seleccion = scanner.nextInt();
-    scanner.nextLine(); // Consumir la nueva línea
+    scanner.nextLine(); 
 
     if (seleccion > 0 && seleccion <= entrenadores.size()) {
         Entrenador entrenadorSeleccionado = entrenadores.get(seleccion - 1);
@@ -410,7 +409,7 @@ private static void iniciarBatalla(Scanner scanner) {
 }
 
 
-    // Método para seleccionar Pokémon de un entrenador
+   
     private static Pokemon seleccionarPokemon(Entrenador entrenador, Scanner scanner) {
         List<Pokemon> equipo = entrenador.getPokemones();
         if (equipo.isEmpty()) {
@@ -424,8 +423,7 @@ private static void iniciarBatalla(Scanner scanner) {
         }
         System.out.print("Elige un Pokémon (número): ");
         int seleccion = scanner.nextInt();
-        scanner.nextLine(); // Consumir la nueva línea
-
+        scanner.nextLine(); 
         if (seleccion > 0 && seleccion <= equipo.size()) {
             return equipo.get(seleccion - 1);
         } else {
@@ -434,27 +432,24 @@ private static void iniciarBatalla(Scanner scanner) {
         }
     }
 
-    // Método para realizar la batalla entre dos Pokémon
-// Método para realizar la batalla entre dos Pokémon
-// Método para realizar la batalla entre dos Pokémon
+ 
 private static void batalla(Pokemon pokemon1, Pokemon pokemon2) {
-    // Crear una instancia de Batalla
     Batalla batalla = new Batalla();
 
-    // Crear dos entrenadores temporales para la batalla
+    
     Entrenador entrenador1 = new Entrenador("Entrenador 1");
     Entrenador entrenador2 = new Entrenador("Entrenador 2");
 
-    // Agregar los Pokémon seleccionados a los entrenadores
+  
     entrenador1.agregarPokemon(pokemon1);
     entrenador2.agregarPokemon(pokemon2);
 
-    // Iniciar la batalla usando la clase Batalla
+    
     batalla.iniciarBatalla(entrenador1, entrenador2);
 }
 
 
-// Método para mostrar el estado actual de los Pokémon después de un ataque
+
 private static void mostrarEstadoPokemon(Pokemon pokemon1, Pokemon pokemon2) {
     System.out.println("\nEstado actual después del ataque:");
     System.out.println(pokemon1.getNombre() + " - Salud: " + pokemon1.getSalud() + ", Ataque: " + pokemon1.getPuntosDeAtaque());

@@ -52,25 +52,22 @@ public class Batalla
         System.out.println("La batalla ha terminado.");
     }
 
-    // Método para mostrar el estado de un Pokémon (Nombre, Tipo, Salud y Ataque)
+   
     private void mostrarEstado(Pokemon pokemon) {
         System.out.println(pokemon.getNombre() + " (Tipo: " + pokemon.getTipo() + ") - Salud: " + pokemon.getSalud() + ", Ataque: " + pokemon.getPuntosDeAtaque());
     }
 
-    // Método para que un Pokémon realice un ataque a otro
-// Método para que un Pokémon realice un ataque a otro
-// Método para que un Pokémon realice un ataque a otro
 private void realizarAtaque(Pokemon atacante, Pokemon defensor) {
     System.out.println(atacante.getNombre() + " ha atacado a " + defensor.getNombre() + "!");
     
-    // El atacante realiza su ataque y causa daño al defensor
+ 
     atacante.atacar(defensor);
     
-    // Mostrar el estado del defensor después del ataque
+   
     System.out.println(atacante.getNombre() + " ataca a " + defensor.getNombre() + " causando " + atacante.getPuntosDeAtaque() + " puntos de daño!");
     System.out.println(defensor.getNombre() + " ahora tiene " + defensor.getSalud() + " puntos de salud.");
 
-    // Mostrar el estado actualizado de ambos Pokémon
+    
     System.out.println("Estado actual después del ataque:");
     mostrarEstado(atacante);
     mostrarEstado(defensor);

@@ -20,7 +20,6 @@ public class Pokemon {
     public void atacar(Pokemon oponente) {
         System.out.println(this.nombre + " ataca a " + oponente.getNombre() + " causando " + this.PuntosDeAtaque + " puntos de daño!");
 
-        // Reducir la salud del oponente en función del ataque
         oponente.recibirDaño(this.PuntosDeAtaque, this.tipo);
     }
 
@@ -31,7 +30,6 @@ public class Pokemon {
         System.out.println(this.nombre + " recibió un ataque del tipo " + tipoAtacante + " y restó " + valorADisminuir + " puntos de vida");
         this.salud -= valorADisminuir;
 
-        // Evitar que la salud sea negativa
         if (this.salud <= 0) {
             this.salud = 0;
             System.out.println(this.nombre + " ha sido derrotado.");

@@ -50,7 +50,6 @@ public class Entrenador {
         System.out.println("Selecciona el número del Pokémon para la batalla:");
         Scanner scanner = new Scanner(System.in);
         
-        // Validar la entrada
         int index = -1;
         while (true) {
             try {
@@ -62,7 +61,7 @@ public class Entrenador {
                 }
             } catch (Exception e) {
                 System.out.println("Entrada no válida. Por favor, ingresa un número.");
-                scanner.next(); // Limpiar el scanner
+                scanner.next(); 
             }
         }
 
