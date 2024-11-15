@@ -1,5 +1,7 @@
 package simulador.gui;
 
+import java.io.File;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -100,8 +102,12 @@ public class Pokeookk extends javax.swing.JFrame {
 
     private void cmbpokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbpokemonActionPerformed
         String nombrePokemon = (String)cmbpokemon.getSelectedItem();
+        String ruta = "gif/" + nombrePokemon + ".gif"; 
         
-     
+        File archivo = new File(ruta);
+      if(archivo.exists() == true){
+          ImageIcon icono = new ImageIcon(ruta);
+      }
     }//GEN-LAST:event_cmbpokemonActionPerformed
 
     /**
